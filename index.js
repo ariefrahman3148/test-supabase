@@ -56,7 +56,7 @@ app.post("/webhook", async (req, res) => {
     return res.status(200).json({ success: true, message: "Data saved!" });
   } catch (err) {
     console.error("Error inserting:", err.message);
-    return res.status(500).json({ error: "Internal server error" });
+    return res.status(500).json({ error: "Internal server error: "+err.message });
   }
 });
 
